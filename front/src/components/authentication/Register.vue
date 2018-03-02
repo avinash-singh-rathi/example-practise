@@ -1,7 +1,7 @@
 <template>
   <section class="section">
     <div class="container">
-      <h1>Login</h1>
+      <h1>Register</h1>
       <form>
         <div class="field">
         <p class="control has-icons-left has-icons-right">
@@ -36,7 +36,7 @@
     <div class="field">
       <p class="control">
         <button class="button is-success">
-          Login
+          Register
         </button>
       </p>
     </div>
@@ -47,7 +47,15 @@
 </template>
 
 <script>
-
+export default {
+  data () {
+    return {
+      name: '',
+      email: '',
+      password: ''
+    }
+  }
+}
 </script>
 
   <style>
