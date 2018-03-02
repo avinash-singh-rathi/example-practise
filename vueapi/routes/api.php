@@ -13,6 +13,17 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::get('/user', function (Request $request) {
+    return App\User::all();
 });
+
+Route::apiResource('/products','ProductController')->middleware('auth:api');
+
+/*Route::get('/test', function(){
+return response()->json([
+  'user'=>[
+    'firstName' => 'Avinash',
+    'lastName' => 'Singh'
+]
+]);
+});*/

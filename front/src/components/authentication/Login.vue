@@ -2,7 +2,7 @@
 <section class="section">
   <div class="container">
     <h1>Login</h1>
-    <form>
+
     <div class="field">
     <p class="control has-icons-left has-icons-right">
       <input class="input" v-model="email" type="email" placeholder="Email">
@@ -24,13 +24,13 @@
   </div>
   <div class="field">
     <p class="control">
-      <button class="button is-success">
+      <button @click="login" class="button is-success">
         Login
       </button>
     </p>
   </div>
-  </form>
-  
+
+
   </div>
 </section>
 </template>
@@ -41,6 +41,22 @@ export default {
    return {
      email: '',
      password: ''
+   }
+ },
+ methods:{
+   login(){
+     var data = {
+       client_id:2,
+       client_secret:'IzAW9bPhTa3NlC9XoImXJeudmiUKYNZZYo5bebuo',
+       grant_type: 'password',
+       username: this.email,
+       password: this.password
+     }
+     this.$http.post('oauth/token',data)
+     .then(function(response){
+       this.$auth.setToken(response.body.access_token, response.body.expires_in * Date.now())
+       this.$router.push('/feed')
+     })
    }
  }
 }

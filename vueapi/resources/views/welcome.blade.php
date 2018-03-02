@@ -88,6 +88,7 @@
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="https://www.youtube.com/watch?v=XVZtO2oRhuc&index=13&list=PL3ZhWMazGi9IommUd5zQmjyNeF7s1sP7Y">Vue Youtube Series</a>
                 </div>
             </div>
         </div>

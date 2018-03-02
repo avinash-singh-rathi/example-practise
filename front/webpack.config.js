@@ -49,7 +49,12 @@ module.exports = {
     historyApiFallback: true,
     noInfo: true,
     overlay: true,
-    port:8008
+    headers: {
+          'Access-Control-Allow-Origin': '*',
+        },
+    port:8008,
+    https: false,
+    disableHostCheck: true
   },
   performance: {
     hints: false
