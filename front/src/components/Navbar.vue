@@ -45,9 +45,15 @@
           </a>
         </div>
       </div>
+      <a class="navbar-item" href="/login">
+        Login
+      </a>
+      <a class="navbar-item" href="/register">
+        Register
+      </a>
     </div>
 
-    
+
   </div>
 </nav>
 </template>
