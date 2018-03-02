@@ -7,7 +7,7 @@
         <p class="control has-icons-left has-icons-right">
           <input class="input" v-model="name" type="text" placeholder="Name">
           <span class="icon is-small is-left">
-            <i class="fas fa-envelope"></i>
+            <i class="fas fa-people"></i>
           </span>
           <span class="icon is-small is-right">
             <i class="fas fa-check"></i>
