@@ -30,6 +30,13 @@ const router = new VueRouter({
       meta:{
         forAuth: true
       }
+    },
+    {
+      path: '/products/create',
+      component: require('./components/product/Create.vue').default,
+      meta:{
+        forAuth: true
+      }
     }
   ]
 })
