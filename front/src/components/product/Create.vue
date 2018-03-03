@@ -32,7 +32,7 @@
         <textarea class="form-control" v-model="product.description" id="productdesctxt" rows="8" cols="80"></textarea>
       </div>
 
-      <button type="button" v-if="product.name && product.price && product.price > 0" class="btn btn-primary">Create</button>
+      <button type="button" v-if="product.name && product.price && product.price > 0" @click="createProduct" class="btn btn-primary">Create</button>
     </form>
   </div>
 </div>
@@ -50,6 +50,14 @@ export default {
         'discount':'',
         'description':''
       }
+    }
+  },
+  methods:{
+    createProduct(){
+      this.$http.post('api/products',this.product)
+      .then(response => {
+        console.log(response)
+      })
     }
   }
 }
