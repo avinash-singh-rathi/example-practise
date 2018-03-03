@@ -5,18 +5,9 @@
         <h2 class="subtitle">
           This page will show all products in pagination.
         </h2>
-        <div class="tile is-ancestor">
-          <div class="tile is-vertical">
-            <div class="tile">
-              <div class="tile is-parent is-vertical">
-                <article v-for="product in products" class="tile is-child notification is-primary">
-                  <p class="title">{{product.name}} </p>
-                  <p class="subtitle">Rs. <strong>{{product.price}}</strong> </p>
-                </article>
-              </div>
-            </div>
-          </div>
-        </div>
+        <ul>
+          <li v-for="product in products">{{ product.name}} | {{ product.price }}</li>
+        </ul>
   </div>
 </section>
 
