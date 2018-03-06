@@ -9,10 +9,12 @@
       <div class="form-group">
         <label for="productnametxt">Product Name</label>
         <input type="text" v-model="product.name" class="form-control" id="productnametxt" autofocus placeholder="Enter Product Name">
+        <span v-if="errors.name" class="text-danger">{{errors.name[0]}}</span>
       </div>
       <div class="form-group">
         <label for="productpricetxt">Price</label>
         <input type="text" v-model="product.price" class="form-control" min="0" id="productpricetxt" placeholder="Price">
+        <span v-if="errors.price" class="text-danger">{{errors.price[0]}}</span>
       </div>
       <div class="form-group">
         <label for="productqnttxt">Quantity</label>
@@ -32,7 +34,7 @@
         <textarea class="form-control" v-model="product.description" id="productdesctxt" rows="8" cols="80"></textarea>
       </div>
 
-      <button type="button" v-if="product.name && product.price && product.price > 0" @click="createProduct" class="btn btn-primary">Create</button>
+      <button type="button" v-if="product.name && product.price && product.price > -5" @click="createProduct" class="btn btn-primary">Create</button>
     </form>
   </div>
 </div>
@@ -49,6 +51,9 @@ export default {
         'quantity':'',
         'discount':'',
         'description':''
+      },
+      errors:{
+
       }
     }
   },
@@ -57,6 +62,11 @@ export default {
       this.$http.post('api/products',this.product)
       .then(response => {
         console.log(response)
+      },
+      function(status){
+        if(status.body.errors){
+          this.errors = status.body.errors
+        }
       })
     }
   }
