@@ -6,6 +6,7 @@
         </a>
         <router-link :to="'/login'" class="py-2 d-none d-md-inline-block" v-if="! isAuth">Login</router-link>
         <router-link :to="'/register'" class="py-2 d-none d-md-inline-block" v-if="! isAuth">Register</router-link>
+        <router-link :to="'/profile'" class="py-2 d-none d-md-inline-block" v-if="isAuth">Profile</router-link>
         <router-link :to="'/feed'" class="py-2 d-none d-md-inline-block" v-if="isAuth">Feeds</router-link>
         <router-link :to="'/products/create'" class="py-2 d-none d-md-inline-block" v-if="isAuth">Create</router-link>
         <router-link :to="'/logout'" class="py-2 d-none d-md-inline-block" v-if="isAuth">Logout</router-link>

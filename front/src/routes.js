@@ -37,6 +37,13 @@ const router = new VueRouter({
       meta:{
         forAuth: true
       }
+    },
+    {
+      path: '/profile',
+      component: require('./components/profile/Profile.vue').default,
+      meta:{
+        forAuth: true
+      }
     }
   ]
 })

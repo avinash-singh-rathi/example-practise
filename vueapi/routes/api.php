@@ -17,6 +17,8 @@ Route::get('/user', function (Request $request) {
     return App\User::all();
 });
 
+Route::get('/auth/user', 'UserController@auth');
+
 Route::apiResource('/products','ProductController')->middleware('auth:api');
 
 /*Route::get('/test', function(){
